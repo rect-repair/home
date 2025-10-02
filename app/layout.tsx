@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Retro Desktop Interface',
-  description: 'A nostalgic 90s desktop interface inspired by poolsuite.net',
+  title: '[[rect*]]repair home',
+  description: 'home computer',
 }
 
 export default function RootLayout({
