@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 export default function EventsWindow() {
-  const [currentUrl] = useState('https://rect-repair.github.io/website/');
+  const [currentUrl] = useState('https://rect-repair.github.io/catalogue/');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleRefresh = () => {
