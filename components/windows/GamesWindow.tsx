@@ -4,7 +4,7 @@ import React from 'react';
 
 const games = [
   { id: 1, title: 'deimos', url: 'https://deimosly.itch.io/', icon: '/images/icons/deimosly.png' },
-  { id: 2, title: 'v10101a', url: 'https://violand.xyz/', icon: '/images/icons/v10101a.png' },
+  { id: 2, title: 'v10101a', url: 'http://violand.xyz/', icon: '/images/icons/v10101a.png' },
   { id: 3, title: 'jyolyu', url: 'https://jyolyu.itch.io/', icon: '/images/icons/jyolyu.png' },
 ];
 
