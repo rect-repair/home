@@ -119,7 +119,7 @@ function DesktopContent() {
         
         <DesktopIcon
           id="games"
-          label="Games"
+          label="Cool things from friends"
           icon={<img src="/images/icons/games.png" alt="Games" className="w-24 h-24" />}
           onClick={() => handleOpenWindow('games')}
           x={350}
@@ -164,6 +164,10 @@ function DesktopContent() {
         </Window>
       ))}
 
+      {/* Floating Footer */}
+      <div className="fixed bottom-2 left-2 text-xs text-gray-600 z-10 pointer-events-none">
+        ©2025 [[rect*]]repair
+      </div>
     </div>
   );
 }

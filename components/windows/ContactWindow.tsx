@@ -6,27 +6,36 @@ const contactMethods = [
   {
     id: 1,
     name: 'Email',
-    description: 'Send us a message',
-    icon: '📧',
+    description: '',
+    icon: '/images/icons/email.png',
     action: 'mailto:rectanglerepair@gmail.com',
     color: 'text-arngren-blue'
   },
   {
     id: 2,
     name: 'Instagram',
-    description: 'Follow our updates',
-    icon: '📷',
+    description: '',
+    icon: '/images/icons/instagram.png',
     action: 'https://www.instagram.com/rect_repair/',
-    color: 'text-arngren-red'
+    color: 'text-arngren-blue'
+
   },
   
   {
     id: 3,
     name: 'GitHub',
-    description: 'View our projects',
-    icon: '💻',
+    description: '',
+    icon: '/images/icons/github.png',
     action: 'https://github.com/rect-repair',
-    color: 'text-arngren-purple'
+    color: 'text-arngren-blue'
+  },
+  {
+    id: 4,
+    name: 'Wechat',
+    description: '',
+    icon: '/images/icons/wechat.png',
+      action: 'https://mp.weixin.qq.com/s/rb_z1VrImr9Y8xuC-Lcqlg',
+    color: 'text-arngren-blue'
   },
 
 ];
@@ -41,7 +50,7 @@ export default function ContactWindow() {
       <div className="p-4">
         <div className="flex items-center mb-4">
           <img src="/images/icons/contact.png" alt="Contact" className="w-6 h-6 mr-2" />
-          <h2 className="text-xl font-bold text-arngren-red">Get in Touch</h2>
+          <h2 className="text-xl font-bold text-arngren-blue">Get in Touch</h2>
         </div>
         
         <div className="grid grid-cols-2 gap-3">
@@ -52,7 +61,9 @@ export default function ContactWindow() {
               onClick={() => handleContactClick(method.action)}
             >
               <div className="text-center">
-                <div className="text-2xl mb-2">{method.icon}</div>
+                <div className="mb-2 flex justify-center">
+                  <img src={method.icon} alt={method.name} className="w-8 h-8" />
+                </div>
                 <h3 className={`font-bold text-sm ${method.color} mb-1`}>
                   {method.name}
                 </h3>

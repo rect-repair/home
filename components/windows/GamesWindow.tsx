@@ -3,7 +3,8 @@
 import React from 'react';
 
 const games = [
-  { id: 1, title: 'deimosly', url: 'https://deimosly.itch.io/', icon: '🎮' },
+  { id: 1, title: 'deimosly', url: 'https://deimosly.itch.io/', icon: '/images/icons/deimosly.png' },
+  { id: 2, title: 'v10101', url: 'https://violand.xyz/', icon: '/images/icons/v10101.png' },
 ];
 
 export default function GamesWindow() {
@@ -22,7 +23,13 @@ export default function GamesWindow() {
             className="retro-icon w-20 h-20 flex-col cursor-pointer hover:scale-105 transition-transform"
             onClick={() => handleGameClick(game.url)}
           >
-            <div className="text-2xl mb-1">{game.icon}</div>
+            <div className="mb-1 flex justify-center">
+              {game.icon.startsWith('/images/') ? (
+                <img src={game.icon} alt={game.title} className="w-8 h-8" />
+              ) : (
+                <div className="text-2xl">{game.icon}</div>
+              )}
+            </div>
             <div className="text-xs text-center leading-tight">{game.title}</div>
             <img src="/images/icons/external.png" alt="External" className="w-3 h-3 mt-1" />
           </div>
