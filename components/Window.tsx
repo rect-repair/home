@@ -73,9 +73,6 @@ export default function Window({
     </div>
   );
 
-  if (windowState.isMaximized) {
-    return windowContent;
-  }
 
   return (
     <CustomDraggable
