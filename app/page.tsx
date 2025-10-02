@@ -27,8 +27,6 @@ function DesktopContent() {
         y: 100,
         width: 800,
         height: 600,
-        isMinimized: false,
-        isMaximized: false,
         isVisible: true,
       },
       archive: {
@@ -38,8 +36,6 @@ function DesktopContent() {
         y: 150,
         width: 800,
         height: 600,
-        isMinimized: false,
-        isMaximized: false,
         isVisible: true,
       },
       games: {
@@ -49,8 +45,6 @@ function DesktopContent() {
         y: 250,
         width: 600,
         height: 500,
-        isMinimized: false,
-        isMaximized: false,
         isVisible: true,
       },
       shop: {
@@ -60,8 +54,6 @@ function DesktopContent() {
         y: 100,
         width: 500,
         height: 400,
-        isMinimized: false,
-        isMaximized: false,
         isVisible: true,
       },
       contact: {
@@ -71,8 +63,6 @@ function DesktopContent() {
         y: 150,
         width: 500,
         height: 400,
-        isMinimized: false,
-        isMaximized: false,
         isVisible: true,
       },
     };

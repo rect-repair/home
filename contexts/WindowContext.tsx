@@ -7,8 +7,6 @@ interface WindowContextType {
   windows: WindowState[];
   openWindow: (window: Omit<WindowState, 'zIndex'>) => void;
   closeWindow: (id: string) => void;
-  minimizeWindow: (id: string) => void;
-  maximizeWindow: (id: string) => void;
   updateWindowPosition: (id: string, x: number, y: number) => void;
   updateWindowSize: (id: string, width: number, height: number) => void;
   bringToFront: (id: string) => void;
@@ -19,8 +17,6 @@ const WindowContext = createContext<WindowContextType | undefined>(undefined);
 type WindowAction =
   | { type: 'OPEN_WINDOW'; payload: WindowState }
   | { type: 'CLOSE_WINDOW'; payload: string }
-  | { type: 'MINIMIZE_WINDOW'; payload: string }
-  | { type: 'MAXIMIZE_WINDOW'; payload: string }
   | { type: 'UPDATE_POSITION'; payload: { id: string; x: number; y: number } }
   | { type: 'UPDATE_SIZE'; payload: { id: string; width: number; height: number } }
   | { type: 'BRING_TO_FRONT'; payload: string };
@@ -33,19 +29,7 @@ function windowReducer(state: WindowState[], action: WindowAction): WindowState[
     case 'CLOSE_WINDOW':
       return state.filter(window => window.id !== action.payload);
     
-    case 'MINIMIZE_WINDOW':
-      return state.map(window =>
-        window.id === action.payload
-          ? { ...window, isMinimized: !window.isMinimized }
-          : window
-      );
     
-    case 'MAXIMIZE_WINDOW':
-      return state.map(window =>
-        window.id === action.payload
-          ? { ...window, isMaximized: !window.isMaximized }
-          : window
-      );
     
     case 'UPDATE_POSITION':
       return state.map(window =>
@@ -89,13 +73,7 @@ export function WindowProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'CLOSE_WINDOW', payload: id });
   };
 
-  const minimizeWindow = (id: string) => {
-    dispatch({ type: 'MINIMIZE_WINDOW', payload: id });
-  };
 
-  const maximizeWindow = (id: string) => {
-    dispatch({ type: 'MAXIMIZE_WINDOW', payload: id });
-  };
 
   const updateWindowPosition = (id: string, x: number, y: number) => {
     dispatch({ type: 'UPDATE_POSITION', payload: { id, x, y } });
@@ -115,8 +93,6 @@ export function WindowProvider({ children }: { children: ReactNode }) {
         windows,
         openWindow,
         closeWindow,
-        minimizeWindow,
-        maximizeWindow,
         updateWindowPosition,
         updateWindowSize,
         bringToFront,

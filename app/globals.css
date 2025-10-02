@@ -25,15 +25,15 @@ body {
 }
 
 
-/* Arngren-style Window Styles */
+
 .retro-window {
   background: #ffffff;
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
   font-family: 'Times New Roman', serif;
 }
 
 .retro-window-titlebar {
-  background: #ffffff;
+  background: #909090;
   color: #ffffff;
   padding: 1px 6px;
   font-size: 14px;
@@ -43,11 +43,11 @@ body {
   align-items: center;
   cursor: move;
   user-select: none;
-  border-bottom: 1px solid #000000;
+  /* border-bottom: 1px solid #000000; */
 }
 
 .retro-window-content {
-  background: #ffffff;
+  background: #d4d4d4;
   padding: 12px;
   height: calc(100% - 40px);
   overflow: auto;
@@ -55,9 +55,7 @@ body {
 }
 
 .retro-button {
-  background: #ffffff;
-  border: 1px solid #000000;
-  padding: 6px;
+  padding: 1px;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
@@ -66,21 +64,11 @@ body {
   color: #000000;
 }
 
-.retro-button:hover {
-  background: #0008ff;
-  color: #ffffff;
-}
-
-.retro-button:active {
-  background: #000000;
-  color: #ffffff;
-}
 
 .retro-icon {
   width: 96px;
   height: 96px;
   background: #ffffff;
-  /* border: 1px solid #000000; */
   display: flex;
   align-items: center;
   justify-content: center;

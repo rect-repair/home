@@ -21,7 +21,7 @@ export default function EventsWindow() {
   return (
     <div className="h-full bg-white text-black flex flex-col">
       {/* Browser Toolbar */}
-      <div className="bg-gray-200 border-b-2 border-black p-2 flex items-center space-x-2">
+      <div className="bg-gray-200 p-2 flex items-center space-x-2">
         <button
           onClick={handleRefresh}
           className="retro-button w-6 h-6 flex items-center justify-center p-0"
@@ -30,7 +30,7 @@ export default function EventsWindow() {
           <img src="/images/icons/refresh.png" alt="Refresh" className={`w-3 h-3 ${isLoading ? 'animate-spin' : ''}`} />
         </button>
         
-        <div className="flex-1 bg-white border-2 border-black px-2 py-1 text-xs">
+        <div className="flex-1 bg-white px-2 py-1 text-xs">
           <span className="text-black">{currentUrl}</span>
         </div>
         

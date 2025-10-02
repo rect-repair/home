@@ -5,8 +5,6 @@ export interface WindowState {
   y: number;
   width: number;
   height: number;
-  isMinimized: boolean;
-  isMaximized: boolean;
   isVisible: boolean;
   zIndex: number;
 }
@@ -20,8 +18,6 @@ export interface WindowProps {
   initialX?: number;
   initialY?: number;
   onClose?: () => void;
-  onMinimize?: () => void;
-  onMaximize?: () => void;
 }
 
 export interface DesktopIconProps {

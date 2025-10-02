@@ -14,10 +14,8 @@ export default function Window({
   initialX = 100,
   initialY = 100,
   onClose,
-  onMinimize,
-  onMaximize,
 }: WindowProps) {
-  const { windows, closeWindow, minimizeWindow, maximizeWindow, bringToFront, updateWindowPosition } = useWindow();
+  const { windows, closeWindow, bringToFront, updateWindowPosition } = useWindow();
   const [isDragging, setIsDragging] = useState(false);
   const windowRef = useRef<HTMLDivElement>(null);
   
@@ -33,21 +31,7 @@ export default function Window({
     }
   };
 
-  const handleMinimize = () => {
-    if (onMinimize) {
-      onMinimize();
-    } else {
-      minimizeWindow(id);
-    }
-  };
 
-  const handleMaximize = () => {
-    if (onMaximize) {
-      onMaximize();
-    } else {
-      maximizeWindow(id);
-    }
-  };
 
   const handleMouseDown = () => {
     bringToFront(id);
@@ -58,17 +42,14 @@ export default function Window({
     updateWindowPosition(id, data.x, data.y);
   };
 
-  if (windowState.isMinimized) {
-    return null;
-  }
 
   const windowContent = (
     <div
       ref={windowRef}
       className="retro-window"
       style={{
-        width: windowState.isMaximized ? '100vw' : windowState.width,
-        height: windowState.isMaximized ? '100vh' : windowState.height,
+        width: windowState.width,
+        height: windowState.height,
         position: 'absolute',
         zIndex: windowState.zIndex,
       }}
@@ -78,25 +59,11 @@ export default function Window({
         <span className="flex-1 truncate">{title}</span>
         <div className="flex space-x-1">
           <button
-            onClick={handleMinimize}
-            className="retro-button w-6 h-6 flex items-center justify-center p-0"
-            title="Minimize"
-          >
-            <span className="text-xs font-bold">−</span>
-          </button>
-          <button
-            onClick={handleMaximize}
-            className="retro-button w-6 h-6 flex items-center justify-center p-0"
-            title={windowState.isMaximized ? "Restore" : "Maximize"}
-          >
-            <span className="text-xs font-bold">{windowState.isMaximized ? '⧠' : '⧉'}</span>
-          </button>
-          <button
             onClick={handleClose}
             className="retro-button w-6 h-6 flex items-center justify-center p-0"
             title="Close"
           >
-            <span className="text-xs font-bold">×</span>
+            <img src="/images/icons/close.png" alt="Close" className="w-3 h-3" />
           </button>
         </div>
       </div>
