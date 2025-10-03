@@ -3,9 +3,8 @@
 import React from 'react';
 
 const products = [
-  { id: 1, name: 'Vaporwave T-Shirt', price: '$29.99', image: '/images/icons/reality1.png', category: 'Apparel' },
-  { id: 2, name: 'Neon Poster', price: '$19.99', image: '/images/icons/poster.png', category: 'Art' },
-  { id: 3, name: 'Synthwave Vinyl', price: '$24.99', image: '/images/icons/vinyl.png', category: 'Music' },
+  { id: 1, name: 'Reality Deviation Angle Indicator', price: '$??', image: '/images/icons/ftn1.jpg', category: 'goods' },
+  { id: 2, name: 'Official Fabric Badge', price: '$??', image: '/images/icons/ftn2.png', category: 'goods' },
 
 ];
 
@@ -13,7 +12,7 @@ export default function ShopWindow() {
   return (
     <div className="h-full bg-white text-black p-4">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-arngren-red">🛒 Shop</h2>
+        <h2 className="text-xl font-bold text-arngren-red">Shop</h2>
         <button className="retro-button flex items-center space-x-1">
           <img src="/images/icons/shop.png" alt="Shop" className="w-4 h-4" />
           <span>Cart (0)</span>
@@ -24,18 +23,18 @@ export default function ShopWindow() {
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-white  p-3 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+            className="bg-white  p-3 cursor-pointer"
           >
             <div className="text-center">
               <div className="mb-2 flex justify-center">
                 <img src={product.image} alt={product.name} className="w-16 h-16" />
               </div>
-              <h3 className="font-bold text-arngren-yellow text-sm mb-1">{product.name}</h3>
+              <h3 className="font-bold text-arngren-red text-sm mb-1">{product.name}</h3>
               <p className="text-arngren-green text-xs mb-2">{product.category}</p>
               <p className="text-arngren-red font-bold text-sm mb-2">{product.price}</p>
-              <button className="retro-button text-xs px-2 py-1 w-full">
+              {/* <button className="retro-button text-xs px-2 py-1 w-full">
                 Add to Cart
-              </button>
+              </button> */}
             </div>
           </div>
         ))}

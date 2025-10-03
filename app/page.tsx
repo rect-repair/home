@@ -9,6 +9,7 @@ import ArchiveWindow from '@/components/windows/ArchiveWindow';
 import GamesWindow from '@/components/windows/GamesWindow';
 import ShopWindow from '@/components/windows/ShopWindow';
 import ContactWindow from '@/components/windows/ContactWindow';
+import KyotoWindow from '@/components/windows/KyotoWindow';
 
 interface DesktopIcon {
   id: string;
@@ -77,6 +78,18 @@ const desktopIcons: DesktopIcon[] = [
     x: ICON_SPACING * 5,
     y: 0,
   },
+  {
+    id: 'kyoto',
+    label: 'Kyoto',
+    iconSrc: '/images/icons/kyoto.png',
+    iconAlt: 'Kyoto',
+    openPath: 'kyoto',
+    x: ICON_SPACING * 6,
+    y: 0,
+  },
+
+  
+  
 ];
 
 function DesktopContent() {
@@ -134,6 +147,15 @@ function DesktopContent() {
         height: 400,
         isVisible: true,
       },
+      kyoto: {
+        id: 'kyoto',
+        title: 'Reality Restoration Project: Kyoto',
+        x: 300,
+        y: 200,
+        width: 800,
+        height: 600,
+        isVisible: true,
+      },
     };
 
     openWindow(windowConfigs[windowType as keyof typeof windowConfigs]);
@@ -189,6 +211,7 @@ function DesktopContent() {
           {window.id === 'games' && <GamesWindow />}
           {window.id === 'shop' && <ShopWindow />}
           {window.id === 'contact' && <ContactWindow />}
+          {window.id === 'kyoto' && <KyotoWindow />}
         </Window>
       ))}
 

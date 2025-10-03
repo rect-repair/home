@@ -33,6 +33,13 @@ const games = [
     url: 'https://www.yufengzhao.com/',
     icon: '/images/icons/yufeng.gif',
   },
+  {
+    id: 6,
+    title: 'cedar',
+    url: 'https://www.instagram.com/cedarshanghai/',
+    icon: '/images/icons/cedar.png',
+  },
+
 ];
 
 export default function GamesWindow() {
