@@ -31,7 +31,7 @@ function DesktopContent() {
       },
       archive: {
         id: 'archive',
-        title: 'Archive Browser',
+        title: 'Archive',
         x: 200,
         y: 150,
         width: 800,
@@ -40,7 +40,7 @@ function DesktopContent() {
       },
       games: {
         id: 'games',
-        title: 'Games Collection',
+        title: 'Cool things from friends',
         x: 150,
         y: 250,
         width: 600,
@@ -49,7 +49,7 @@ function DesktopContent() {
       },
       shop: {
         id: 'shop',
-        title: 'Retro Shop',
+        title: 'Consumerism',
         x: 400,
         y: 100,
         width: 500,
@@ -80,59 +80,61 @@ function DesktopContent() {
 
       {/* Desktop Icons */}
       <div className="absolute inset-0 p-4">
-        <DesktopIcon
-          id="events"
-          label="Events"
-          icon={<img src="/images/icons/events.png" alt="Events" className="w-24 h-24" />}
-          onClick={() => handleOpenWindow('events')}
-          x={50}
-          y={50}
-        />
-        
-        <DesktopIcon
-          id="archive"
-          label="Meetup Archive"
-          icon={<img src="/images/icons/archive.png" alt="Archive" className="w-24 h-24" />}
-          onClick={() => handleOpenWindow('archive')}
-          x={150}
-          y={50}
-        />
-        
-        <DesktopIcon
-          id="instagram"
-          label="Instagram"
-          icon={<img src="/images/icons/instagram.png" alt="Instagram" className="w-24 h-24" />}
-          onClick={() => window.open('https://www.instagram.com/rect_repair/', '_blank')}
-          x={250}
-          y={50}
-        />
-        
-        <DesktopIcon
-          id="games"
-          label="Cool things from friends"
-          icon={<img src="/images/icons/games.png" alt="Games" className="w-24 h-24" />}
-          onClick={() => handleOpenWindow('games')}
-          x={350}
-          y={50}
-        />
-        
-        <DesktopIcon
-          id="shop"
-          label="Shop"
-          icon={<img src="/images/icons/shop.png" alt="Shop" className="w-24 h-24" />}
-          onClick={() => handleOpenWindow('')}
-          x={450}
-          y={50}
-        />
-        
-        <DesktopIcon
-          id="contact"
-          label="Contact"
-          icon={<img src="/images/icons/contact.png" alt="Contact" className="w-24 h-24" />}
-          onClick={() => handleOpenWindow('contact')}
-          x={550}
-          y={50}
-        />
+        <div className="flex flex-wrap gap-2 justify-start items-start h-full overflow-auto p-2">
+          <DesktopIcon
+            id="events"
+            label="Events"
+            icon={<img src="/images/icons/events.png" alt="Events" className="w-24 h-24" />}
+            onClick={() => handleOpenWindow('events')}
+            x={0}
+            y={0}
+          />
+          
+          <DesktopIcon
+            id="archive"
+            label="Meetup Archive"
+            icon={<img src="/images/icons/archive.png" alt="Archive" className="w-24 h-24" />}
+            onClick={() => handleOpenWindow('archive')}
+            x={0}
+            y={0}
+          />
+          
+          <DesktopIcon
+            id="instagram"
+            label="Instagram"
+            icon={<img src="/images/icons/instagram.png" alt="Instagram" className="w-24 h-24" />}
+            onClick={() => window.open('https://www.instagram.com/rect_repair/', '_blank')}
+            x={0}
+            y={0}
+          />
+          
+          <DesktopIcon
+            id="games"
+            label="Cool things from friends"
+            icon={<img src="/images/icons/games.png" alt="Games" className="w-24 h-24" />}
+            onClick={() => handleOpenWindow('games')}
+            x={0}
+            y={0}
+          />
+          
+          <DesktopIcon
+            id="shop"
+            label="Shop"
+            icon={<img src="/images/icons/shop.png" alt="Shop" className="w-24 h-24" />}
+            onClick={() => handleOpenWindow('shop')}
+            x={0}
+            y={0}
+          />
+          
+          <DesktopIcon
+            id="contact"
+            label="Contact"
+            icon={<img src="/images/icons/contact.png" alt="Contact" className="w-24 h-24" />}
+            onClick={() => handleOpenWindow('contact')}
+            x={0}
+            y={0}
+          />
+        </div>
       </div>
 
       {/* Windows */}

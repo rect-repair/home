@@ -3,7 +3,7 @@
 import React from 'react';
 
 const products = [
-  { id: 1, name: 'Vaporwave T-Shirt', price: '$29.99', image: '/images/icons/tshirt.png', category: 'Apparel' },
+  { id: 1, name: 'Vaporwave T-Shirt', price: '$29.99', image: '/images/icons/reality1.png', category: 'Apparel' },
   { id: 2, name: 'Neon Poster', price: '$19.99', image: '/images/icons/poster.png', category: 'Art' },
   { id: 3, name: 'Synthwave Vinyl', price: '$24.99', image: '/images/icons/vinyl.png', category: 'Music' },
 

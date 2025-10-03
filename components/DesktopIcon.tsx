@@ -43,6 +43,23 @@ export default function DesktopIcon({ id, label, icon, onClick, x = 0, y = 0 }: 
     }
   };
 
+  // For flex layout, don't use CustomDraggable positioning
+  if (x === 0 && y === 0) {
+    return (
+      <div
+        className="desktop-icon"
+        onClick={handleClick}
+      >
+        <div className="retro-icon w-24 h-24 flex-col">
+          {icon}
+        </div>
+        <div className="desktop-icon-label">
+          {label}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <CustomDraggable
       position={position}

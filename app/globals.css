@@ -66,6 +66,8 @@ body {
 
 
 .retro-icon {
+  width: 96px;
+  height: 96px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -98,6 +100,7 @@ body {
   margin: 8px;
   cursor: pointer;
   user-select: none;
+  flex-shrink: 0;
 }
 
 .desktop-icon-label {
@@ -131,13 +134,16 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  /* .desktop-icon {
-    width: 120px;
-    margin: 4px;
-  } */
-  
   .retro-icon {
     width: 96px;
+    height: 96px;
+    font-size: 10px;
+  }
+  
+  .desktop-icon {
+    width: 96px;
+    margin: 4px;
+    flex-shrink: 0;
   }
   
   .desktop-icon-label {
@@ -161,6 +167,23 @@ body {
   .retro-button {
     padding: 6px;
     font-size: 12px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .desktop-icon {
+    width: 80px;
+    margin: 2px;
+  }
+  
+  .retro-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .desktop-icon-label {
+    font-size: 9px;
   }
 }
 
