@@ -3,12 +3,10 @@
 import React from 'react';
 
 const products = [
-  { id: 1, name: 'Vaporwave T-Shirt', price: '$29.99', image: '👕', category: 'Apparel' },
-  { id: 2, name: 'Neon Poster', price: '$19.99', image: '🖼️', category: 'Art' },
-  { id: 3, name: 'Synthwave Vinyl', price: '$24.99', image: '💿', category: 'Music' },
-  { id: 4, name: 'Retro Mug', price: '$14.99', image: '☕', category: 'Accessories' },
-  { id: 5, name: '80s Sticker Pack', price: '$9.99', image: '🏷️', category: 'Accessories' },
-  { id: 6, name: 'Cyberpunk Hoodie', price: '$49.99', image: '🧥', category: 'Apparel' },
+  { id: 1, name: 'Vaporwave T-Shirt', price: '$29.99', image: '/images/icons/tshirt.png', category: 'Apparel' },
+  { id: 2, name: 'Neon Poster', price: '$19.99', image: '/images/icons/poster.png', category: 'Art' },
+  { id: 3, name: 'Synthwave Vinyl', price: '$24.99', image: '/images/icons/vinyl.png', category: 'Music' },
+
 ];
 
 export default function ShopWindow() {
@@ -29,7 +27,9 @@ export default function ShopWindow() {
             className="bg-white  p-3 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
           >
             <div className="text-center">
-              <div className="text-4xl mb-2">{product.image}</div>
+              <div className="mb-2 flex justify-center">
+                <img src={product.image} alt={product.name} className="w-16 h-16" />
+              </div>
               <h3 className="font-bold text-arngren-yellow text-sm mb-1">{product.name}</h3>
               <p className="text-arngren-green text-xs mb-2">{product.category}</p>
               <p className="text-arngren-red font-bold text-sm mb-2">{product.price}</p>
