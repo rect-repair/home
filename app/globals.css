@@ -66,8 +66,6 @@ body {
 
 
 .retro-icon {
-  width: 96px;
-  height: 96px;
   background: #ffffff;
   display: flex;
   align-items: center;
@@ -133,15 +131,13 @@ body {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .desktop-icon {
+  /* .desktop-icon {
     width: 120px;
     margin: 4px;
-  }
+  } */
   
   .retro-icon {
     width: 96px;
-    height: 96px;
-    font-size: 10px;
   }
   
   .desktop-icon-label {

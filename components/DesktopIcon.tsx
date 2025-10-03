@@ -56,7 +56,7 @@ export default function DesktopIcon({ id, label, icon, onClick, x = 0, y = 0 }: 
         className="desktop-icon"
         onClick={handleClick}
       >
-        <div className="retro-icon w-16 h-16 flex-col">
+        <div className="retro-icon w-24 h-24 flex-col">
           {icon}
         </div>
         <div className="desktop-icon-label">
