@@ -1,21 +1,32 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { DesktopIconProps } from '@/types/window';
 import CustomDraggable from './CustomDraggable';
 
-export default function DesktopIcon({ id, label, icon, onClick, x = 0, y = 0 }: DesktopIconProps) {
+export default function DesktopIcon({
+  id,
+  label,
+  icon,
+  onClick,
+  x = 0,
+  y = 0,
+}: DesktopIconProps) {
   const [position, setPosition] = useState({ x, y });
   const [isDragging, setIsDragging] = useState(false);
   const dragStartRef = useRef({ x: 0, y: 0 });
   const hasMovedRef = useRef(false);
 
+  useEffect(() => {
+    console.log('desktop icon re-rendered');
+  }, []);
+
   const handleDrag = (e: MouseEvent, data: { x: number; y: number }) => {
     setPosition({ x: data.x, y: data.y });
     // Check if we've moved more than 5 pixels
     const distance = Math.sqrt(
-      Math.pow(data.x - dragStartRef.current.x, 2) + 
-      Math.pow(data.y - dragStartRef.current.y, 2)
+      Math.pow(data.x - dragStartRef.current.x, 2) +
+        Math.pow(data.y - dragStartRef.current.y, 2)
     );
     if (distance > 5) {
       hasMovedRef.current = true;
@@ -43,43 +54,29 @@ export default function DesktopIcon({ id, label, icon, onClick, x = 0, y = 0 }: 
     }
   };
 
-  // For flex layout, don't use CustomDraggable positioning
-  if (x === 0 && y === 0) {
-    return (
-      <div
-        className="desktop-icon"
-        onClick={handleClick}
-      >
-        <div className="retro-icon w-24 h-24 flex-col">
-          {icon}
-        </div>
-        <div className="desktop-icon-label">
-          {label}
-        </div>
-      </div>
-    );
-  }
+  const iconComponent = (
+    <div className='desktop-icon' onClick={handleClick}>
+      <div className='retro-icon w-24 h-24 flex-col'>{icon}</div>
+      <div className='desktop-icon-label'>{label}</div>
+    </div>
+  );
 
   return (
-    <CustomDraggable
-      position={position}
-      onDrag={handleDrag}
-      onStart={handleDragStart}
-      onStop={handleDragStop}
-      handle=".desktop-icon"
-      bounds="parent"
-    >
-      <div
-        className="desktop-icon"
-        onClick={handleClick}
+    <>
+      {/*  mobile normal flexbox layout*/}
+      <div className='md:hidden'>{iconComponent}</div>
+      {/* desktop , use CustomDraggable positioning*/}
+      <CustomDraggable
+        position={position}
+        onDrag={handleDrag}
+        onStart={handleDragStart}
+        onStop={handleDragStop}
+        handle='.desktop-icon'
+        bounds='parent'
+        className='hidden md:block'
       >
-        <div className="retro-icon w-24 h-24 flex-col">
-          {icon}
-        </div>
-        <div className="desktop-icon-label">
-          {label}
-        </div>
-      </div>
-    </CustomDraggable>
+        {iconComponent}
+      </CustomDraggable>
+    </>
   );
 }

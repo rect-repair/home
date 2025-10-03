@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-
+import clsx from 'clsx';
 interface CustomDraggableProps {
   children: React.ReactNode;
   position: { x: number; y: number };
@@ -10,6 +10,7 @@ interface CustomDraggableProps {
   onStop?: () => void;
   handle?: string;
   bounds?: string;
+  className?: string;
 }
 
 export default function CustomDraggable({
@@ -19,7 +20,8 @@ export default function CustomDraggable({
   onStart,
   onStop,
   handle = '.draggable-handle',
-  bounds = 'parent'
+  bounds = 'parent',
+  className = '',
 }: CustomDraggableProps) {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
@@ -27,6 +29,11 @@ export default function CustomDraggable({
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('custom draggable re-rendered');
+  }, []);
+
+  useEffect(() => {
+    console.log('position', position);
     if (!isDragging) {
       setCurrentPosition(position);
     }
@@ -35,14 +42,14 @@ export default function CustomDraggable({
   const handleMouseDown = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
     const handleElement = target.closest(handle);
-    
+
     if (!handleElement) return;
 
     e.preventDefault();
     setIsDragging(true);
     setDragStart({
       x: e.clientX - currentPosition.x,
-      y: e.clientY - currentPosition.y
+      y: e.clientY - currentPosition.y,
     });
 
     if (onStart) onStart();
@@ -62,9 +69,15 @@ export default function CustomDraggable({
       const parent = elementRef.current.parentElement;
       const parentRect = parent.getBoundingClientRect();
       const elementRect = elementRef.current.getBoundingClientRect();
-      
-      boundedX = Math.max(0, Math.min(newX, parentRect.width - elementRect.width));
-      boundedY = Math.max(0, Math.min(newY, parentRect.height - elementRect.height));
+
+      boundedX = Math.max(
+        0,
+        Math.min(newX, parentRect.width - elementRect.width)
+      );
+      boundedY = Math.max(
+        0,
+        Math.min(newY, parentRect.height - elementRect.height)
+      );
     }
 
     const newPosition = { x: boundedX, y: boundedY };
@@ -74,7 +87,7 @@ export default function CustomDraggable({
 
   const handleMouseUp = () => {
     if (!isDragging) return;
-    
+
     setIsDragging(false);
     if (onStop) onStop();
   };
@@ -94,11 +107,14 @@ export default function CustomDraggable({
   return (
     <div
       ref={elementRef}
+      className={clsx(
+        'absolute',
+        isDragging ? 'cursor-grabbing' : 'cursor-grab',
+        className
+      )}
       style={{
-        position: 'absolute',
         left: currentPosition.x,
         top: currentPosition.y,
-        cursor: isDragging ? 'grabbing' : 'grab'
       }}
       onMouseDown={handleMouseDown}
     >
