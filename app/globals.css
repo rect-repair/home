@@ -134,18 +134,18 @@ body {
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .desktop-icon {
-    width: 48px;
+    width: 120px;
     margin: 4px;
   }
   
   .retro-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 8px;
+    width: 96px;
+    height: 96px;
+    font-size: 10px;
   }
   
   .desktop-icon-label {
-    font-size: 8px;
+    font-size: 10px;
   }
   
   .retro-window {
