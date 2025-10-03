@@ -24,10 +24,8 @@ body {
   font-family: 'Times New Roman', serif;
 }
 
-
-
 .retro-window {
-  background: #ffffff;
+  /* background: #ffffff; */
   /* border: 1px solid #000000; */
   font-family: 'Times New Roman', serif;
 }
@@ -63,7 +61,6 @@ body {
   font-family: 'Times New Roman', serif;
   color: #000000;
 }
-
 
 .retro-icon {
   width: 96px;
@@ -139,17 +136,17 @@ body {
     height: 96px;
     font-size: 10px;
   }
-  
+
   .desktop-icon {
     width: 96px;
     margin: 4px;
     flex-shrink: 0;
   }
-  
+
   .desktop-icon-label {
     font-size: 10px;
   }
-  
+
   .retro-window {
     width: 100vw !important;
     height: 100vh !important;
@@ -158,17 +155,14 @@ body {
     left: 0 !important;
     z-index: 1000 !important;
   }
-  
+
   .retro-window-titlebar {
     padding: 8px 12px;
     font-size: 14px;
   }
-  
+
   .retro-button {
     padding: 6px;
     font-size: 12px;
   }
 }
-
-
-
