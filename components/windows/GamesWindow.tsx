@@ -7,7 +7,7 @@ const games = [
   { id: 2, title: 'v10101a', url: 'http://violand.xyz/', icon: '/images/icons/v10101a.png' },
   { id: 3, title: 'jyolyu', url: 'https://jyolyu.itch.io/', icon: '/images/icons/jyolyu.png' },
   { id: 4, title: 'changbai', url: 'https://changbai.li/projects', icon: '/images/icons/changbai.png' },
-  { id: 5, title: 'yufeng', url: 'https://www.yufengzhao.com/', icon: '/images/icons/yufeng.gif' },
+  { id: 5, title: 'yufeng', url: 'https://www.yufengzhao.com/', icon: '/images/icons/yufeng.GIF' },
 ];
 
 export default function GamesWindow() {

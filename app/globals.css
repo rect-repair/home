@@ -170,21 +170,5 @@ body {
   }
 }
 
-/* Extra small mobile screens */
-@media (max-width: 480px) {
-  .desktop-icon {
-    width: 80px;
-    margin: 2px;
-  }
-  
-  .retro-icon {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .desktop-icon-label {
-    font-size: 9px;
-  }
-}
 
 
