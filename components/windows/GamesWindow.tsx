@@ -12,7 +12,7 @@ const games = [
   {
     id: 2,
     title: 'v10101a',
-    url: 'http://violand.xyz/',
+    url: 'http://viola.city',
     icon: '/images/icons/v10101a.png',
   },
   {

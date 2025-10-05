@@ -149,7 +149,7 @@ function DesktopContent() {
       },
       kyoto: {
         id: 'kyoto',
-        title: 'Reality Restoration Project: Kyoto',
+        title: '《京都存在维修计划》/Reality Restoration Project: Kyoto',
         x: 300,
         y: 200,
         width: 800,
