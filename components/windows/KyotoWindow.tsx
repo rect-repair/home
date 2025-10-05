@@ -10,7 +10,7 @@ const leaderboardData = [
     { rank: 4, playerName: '794小队', completedTime: '04:01:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
     { rank: 5, playerName: '一只小猫', completedTime: '04:16:00', stagesCompleted: 17, dateCompleted: '2024-10-03' },
     { rank: 6, playerName: 'bespa', completedTime: 'N/A', stagesCompleted: 17, dateCompleted: '2024-10-03' },
-    { rank: 7, playerName: '放屁小队', completedTime: 'N/A', stagesCompleted: 17, dateCompleted: '2024-10-02' },
+    { rank: 7, playerName: '放屁小队', completedTime: 'N/A', stagesCompleted: 11, dateCompleted: '2024-10-02' },
 
 ];
 
