@@ -11,15 +11,15 @@ const games = [
   },
   {
     id: 2,
-    title: 'v10101a',
-    url: 'http://viola.city',
-    icon: '/images/icons/v10101a.png',
-  },
-  {
-    id: 3,
     title: 'jyolyu',
     url: 'https://jyolyu.itch.io/',
     icon: '/images/icons/jyolyu.png',
+  },
+  {
+    id: 3,
+    title: 'v10101a',
+    url: 'http://viola.city',
+    icon: '/images/icons/v10101a.png',
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const games = [
   },
   {
     id: 7,
-    title: 'boshi's place',
+    title: 'boshis place',
     url: 'https://boshis.place/',
     icon: '/images/icons/boshis.png',
   },
