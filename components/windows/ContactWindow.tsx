@@ -37,6 +37,14 @@ const contactMethods = [
       action: 'https://mp.weixin.qq.com/s/rb_z1VrImr9Y8xuC-Lcqlg',
     color: 'text-arngren-blue'
   },
+  {
+    id: 5,
+    name: 'Red Note',
+    description: '',
+    icon: '/images/icons/rednote.png',
+      action: 'https://www.xiaohongshu.com/user/profile/5f32378b0000000001007d1f',
+    color: 'text-arngren-blue'
+  },
 
 ];
 
@@ -53,7 +61,7 @@ export default function ContactWindow() {
           <h2 className="text-xl font-bold text-arngren-blue">Get in Touch</h2>
         </div>
         
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-3 gap-2">
           {contactMethods.map((method) => (
             <div
               key={method.id}
