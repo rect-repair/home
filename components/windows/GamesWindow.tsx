@@ -45,6 +45,12 @@ const games = [
     url: 'https://boshis.place/',
     icon: '/images/icons/boshis.png',
   },
+  {
+    id: 8,
+    title: 'gaemz',
+    url: 'https://gaemz.carrd.co/',
+    icon: '/images/icons/gaemz.png',
+  },
 
 ];
 
