@@ -39,6 +39,12 @@ const games = [
     url: 'https://www.instagram.com/cedarshanghai/',
     icon: '/images/icons/cedar.png',
   },
+  {
+    id: 7,
+    title: 'boshi's place',
+    url: 'https://boshis.place/',
+    icon: '/images/icons/boshis.png',
+  },
 
 ];
 
