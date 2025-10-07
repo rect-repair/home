@@ -24,6 +24,7 @@ module.exports = {
         'arngren-text': '#000000',
         'arngren-link': '#0000ff',
         'arngren-border': '#000000',
+        'custom-red': '#A60000',
       },
       animation: {
         'scan-line': 'scan-line 2s linear infinite',
