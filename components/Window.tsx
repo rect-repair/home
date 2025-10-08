@@ -81,14 +81,14 @@ export default function Window({
                         className="retro-button w-8 h-8 flex items-center justify-center p-0"
                         title={isFullscreen ? "Restore" : "Maximize"}
                     >
-                        {isFullscreen ? <img src="/images/icons/smol.png" alt="Fullscreen" className="w-8 h-8" /> : <img src="/images/icons/square.png" alt="Fullscreen" className="w-8 h-8" />}
+                        {isFullscreen ? <img src="/cedar-os/images/icons/smol.png" alt="Fullscreen" className="w-8 h-8" /> : <img src="/cedar-os/images/icons/square.png" alt="Fullscreen" className="w-8 h-8" />}
                     </button>
                     <button
                         onClick={handleClose}
                         className="retro-button w-8 h-8 flex items-center justify-center p-0"
                         title="Close"
                     >
-                        <img src="/images/icons/x.png" alt="Close" className="w-8 h-8" />
+                        <img src="/cedar-os/images/icons/x.png" alt="Close" className="w-8 h-8" />
                     </button>
                 </div>
             </div>

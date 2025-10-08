@@ -21,12 +21,13 @@ interface DesktopIcon {
 }
 
 const ICON_SPACING = 180;
+const BASE_PATH = '/cedar-os';
 
 const desktopIcons: DesktopIcon[] = [
   {
     id: 'stellata-waterway',
     label: 'Stellata Waterway',
-    iconSrc: '/images/icons/stellata-waterway.png',
+    iconSrc: `${BASE_PATH}/images/icons/stellata-waterway.png`,
     iconAlt: 'Stellata Waterway',
     openPath: 'https://mattmora.itch.io/stellata-waterway',
     x: 0,
@@ -35,7 +36,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'mary',
     label: 'mary',
-    iconSrc: '/images/icons/mary.gif',
+    iconSrc: `${BASE_PATH}/images/icons/mary.gif`,
     iconAlt: 'mary',
     openPath: 'https://knarniapop.itch.io/mary',
     x: ICON_SPACING,
@@ -44,7 +45,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'all-the-birds-with-one-stone',
     label: 'All The Birds With One Stone',
-    iconSrc: '/images/icons/birds-with-one-stone.png',
+    iconSrc: `${BASE_PATH}/images/icons/birds-with-one-stone.png`,
     iconAlt: 'All The Birds With One Stone',
     openPath: 'https://html-classic.itch.zone/html/10378363/all-the-birds-with-one-stone/bird.html?=0',
     x: ICON_SPACING * 2,
@@ -53,7 +54,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'reversed-queen',
     label: 'Reversed Queen of Wands',
-    iconSrc: '/images/icons/queen-of-wands.png',
+    iconSrc: `${BASE_PATH}/images/icons/queen-of-wands.png`,
     iconAlt: 'Reversed Queen of Wands',
     openPath: 'https://tuniks.itch.io/reversed-queen-of-wands',
     x: ICON_SPACING * 3,
@@ -62,7 +63,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'auto-battle-knights',
     label: 'Auto Battle Knights',
-    iconSrc: '/images/icons/auto-battle-knights.png',
+    iconSrc: `${BASE_PATH}/images/icons/auto-battle-knights.png`,
     iconAlt: 'Auto Battle Knights',
     openPath: 'https://irene-li.itch.io/auto-battle-knights',
     x: ICON_SPACING * 4,
@@ -71,7 +72,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'barnacle-goose',
     label: 'Barnacle Goose Experiment',
-    iconSrc: '/images/icons/barnacle-goose.png',
+    iconSrc: `${BASE_PATH}/images/icons/barnacle-goose.png`,
     iconAlt: 'Barnacle Goose Experiment',
     openPath: 'https://everest-pipkin.com/barnacle-goose/',
     x: ICON_SPACING * 5,
@@ -80,7 +81,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'god-in-head',
     label: 'A God who Lives in Your Head',
-    iconSrc: '/images/icons/god-in-head.png',
+    iconSrc: `${BASE_PATH}/images/icons/god-in-head.png`,
     iconAlt: 'A God who Lives in Your Head',
     openPath: 'https://005lumens.itch.io/a-god-who-lives-in-your-head',
     x: ICON_SPACING * 6,
@@ -89,7 +90,7 @@ const desktopIcons: DesktopIcon[] = [
   {
     id: 'cement',
     label: 'cement',
-    iconSrc: '/images/icons/cement.png',
+    iconSrc: `${BASE_PATH}/images/icons/cement.png`,
     iconAlt: 'cement',
     openPath: 'https://hatimb00.itch.io/cement',
     x: ICON_SPACING * 7,

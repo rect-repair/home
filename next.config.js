@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   basePath: '/cedar-os',
+  assetPrefix: '/cedar-os',
   images: {
     unoptimized: true,
     domains: ['instagram.com', 'www.instagram.com', 'cdn.itch.zone'],

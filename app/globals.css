@@ -5,7 +5,7 @@
 /* Custom Pixel Font */
 @font-face {
   font-family: 'FusionPixel';
-  src: url('/fusion-pixel-10px-monospaced-zh_hans copy.ttf') format('truetype');
+  src: url('/cedar-os/fusion-pixel-10px-monospaced-zh_hans copy.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
