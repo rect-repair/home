@@ -8,6 +8,10 @@ import StellataWaterwayWindow from '@/components/windows/StellataWaterwayWindow'
 import MaryWindow from '@/components/windows/MaryWindow';
 import AllTheBirdsWithOneStoneWindow from '@/components/windows/AllTheBirdsWithOneStoneWindow';
 import BarnacleGooseWindow from '@/components/windows/BarnacleGooseWindow';
+import GodInHeadWindow from '@/components/windows/GodInHeadWindow';
+import CementWindow from '@/components/windows/CementWindow';
+import AutoBattleKnightsWindow from '@/components/windows/AutoBattleKnightsWindow';
+import ReversedQueenOfWandsWindow from '@/components/windows/ReversedQueenOfWandsWindow';
 import FooterBar from '@/components/FooterBar';
 import DesktopTree from '@/components/DesktopTree';
 
@@ -116,16 +120,16 @@ function DesktopContent() {
         x: 50,
         y: 50,
         width: 1000,
-        height: 740,
+        height: 700,
         isVisible: true,
       },
       'mary': {
         id: 'mary',
         title: 'mary',
-        x: 150,
+        x: 100,
         y: 50,
-        width: 1000,
-        height: 750,
+        width: 700,
+        height: 760,
         isVisible: true,
       },
       'barnacle-goose': {
@@ -144,6 +148,42 @@ function DesktopContent() {
         y: 0,
         width: 1000,
         height: 700,
+        isVisible: true,
+      },
+      'reversed-queen': {
+        id: 'reversed-queen',
+        title: 'The Reversed Queen of Wands',
+        x: 350,
+        y: 50,
+        width: 600,
+        height: 730,
+        isVisible: true,
+      },
+      'auto-battle-knights': {
+        id: 'auto-battle-knights',
+        title: 'Auto Battle Knights',
+        x: 400,
+        y: 50,
+        width: 1000,
+        height: 700,
+        isVisible: true,
+      },
+      'cement': {
+        id: 'cement',
+        title: 'cement',
+        x: 450,
+        y: 50,
+        width: 700,
+        height: 700,
+        isVisible: true,
+      },
+      'god-in-head': {
+        id: 'god-in-head',
+        title: 'A God who Lives in Your Head',
+        x: 450,
+        y: 10,
+        width: 1000,
+        height: 800,
         isVisible: true,
       },
     };
@@ -186,12 +226,13 @@ function DesktopContent() {
                     'birdWindow' + Date.now(),
                     `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
                   );
-                } else if (icon.id === 'barnacle-goose' || icon.id === 'stellata-waterway' || icon.id === 'mary') {
-                  handleOpenWindow(icon.id);
                 } else {
-                  // Other games open externally in new tab
-                  window.open(icon.openPath, '_blank');
+                  handleOpenWindow(icon.id);
                 }
+                // else {
+                //   // Other games open externally in new tab
+                //   window.open(icon.openPath, '_blank');
+                // }
               }}
               x={icon.x}
               y={icon.y}
@@ -214,6 +255,10 @@ function DesktopContent() {
           {window.id === 'stellata-waterway' && <StellataWaterwayWindow windowId={window.id} />}
           {window.id === 'mary' && <MaryWindow windowId={window.id} />}
           {window.id === 'barnacle-goose' && <BarnacleGooseWindow windowId={window.id} />}
+          {window.id === 'god-in-head' && <GodInHeadWindow windowId={window.id} />}
+          {window.id === 'cement' && <CementWindow windowId={window.id} />}
+          {window.id === 'auto-battle-knights' && <AutoBattleKnightsWindow windowId={window.id} />}
+          {window.id === 'reversed-queen' && <ReversedQueenOfWandsWindow windowId={window.id} />}
         </Window>
       ))}
 

@@ -17,7 +17,7 @@ export default function BarnacleGooseWindow({ windowId }: BarnacleGooseWindowPro
             {/* Game Info Header - hidden in fullscreen */}
             {!isFullscreen && (
                 <div className="bg-white border-b-4 border-b-custom-border p-3 text-center flex-shrink-0">
-                    <h2 className="text-2xl">Barnacle Goose Experiment</h2>
+                    <h2 className="text-2xl text-custom-green underline"><a href="https://everest-pipkin.com/games/barnaclegoose" target="_blank" rel="noopener noreferrer" className="hover:text-custom-body hover:bg-custom-green">Barnacle Goose Experiment</a></h2>
                     <p className="text-lg">by Everest Pipkin • Interactive • Web</p>
                 </div>
             )}
@@ -28,9 +28,7 @@ export default function BarnacleGooseWindow({ windowId }: BarnacleGooseWindowPro
                     src="https://everest-pipkin.com/barnacle-goose/"
                     allowFullScreen
                     className="w-full h-full border-0"
-                >
-                    <a href="https://everest-pipkin.com/barnacle-goose/">Play Barnacle Goose Experiment</a>
-                </iframe>
+                ></iframe>
             </div>
         </div>
     );

@@ -17,13 +17,13 @@ export default function MaryWindow({ windowId }: MaryWindowProps) {
             {/* Game Info Header - hidden in fullscreen */}
             {!isFullscreen && (
                 <div className="bg-green-200 border-b-2 border-black p-4 text-center flex-shrink-0">
-                    <h2 className="text-2xl">mary</h2>
+                    <h2 className="text-2xl text-custom-green underline"><a href="https://knarniapop.itch.io/mary" target="_blank" rel="noopener noreferrer" className="hover:text-custom-body hover:bg-custom-green">mary</a></h2>
                     <p className="text-lg">by Karina Popp • Narrative • Web • Text</p>
                 </div>
             )}
 
             {/* Embedded Game */}
-            <div className="flex-1 bg-[#3E2F28] flex items-start justify-center pb-4">
+            <div className="flex-1 bg-[#3E2F28] flex items-center justify-center pb-4">
                 <iframe
                     allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated; web-share"
                     allowTransparency={true}
