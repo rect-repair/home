@@ -7,6 +7,7 @@ export interface WindowState {
     height: number;
     isVisible: boolean;
     zIndex: number;
+    isFullscreen?: boolean;
 }
 
 export interface WindowProps {

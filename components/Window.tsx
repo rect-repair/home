@@ -15,9 +15,8 @@ export default function Window({
     initialY = 100,
     onClose,
 }: WindowProps) {
-    const { windows, closeWindow, bringToFront, updateWindowPosition, updateWindowSize } = useWindow();
+    const { windows, closeWindow, bringToFront, updateWindowPosition, updateWindowSize, setWindowFullscreen } = useWindow();
     const [isDragging, setIsDragging] = useState(false);
-    const [isFullscreen, setIsFullscreen] = useState(false);
     const windowRef = useRef<HTMLDivElement>(null);
     const [originalPosition, setOriginalPosition] = useState({ x: initialX, y: initialY });
     const [originalSize, setOriginalSize] = useState({ width: initialWidth, height: initialHeight });
@@ -25,6 +24,8 @@ export default function Window({
     const windowState = windows.find(w => w.id === id);
 
     if (!windowState || !windowState.isVisible) return null;
+
+    const isFullscreen = windowState.isFullscreen || false;
 
     const handleClose = () => {
         if (onClose) {
@@ -39,7 +40,7 @@ export default function Window({
             // Restore to original size and position
             updateWindowPosition(id, originalPosition.x, originalPosition.y);
             updateWindowSize(id, originalSize.width, originalSize.height);
-            setIsFullscreen(false);
+            setWindowFullscreen(id, false);
         } else {
             // Save current position and size
             setOriginalPosition({ x: windowState.x, y: windowState.y });
@@ -47,7 +48,7 @@ export default function Window({
             // Go fullscreen
             updateWindowPosition(id, 0, 0);
             updateWindowSize(id, window.innerWidth, window.innerHeight);
-            setIsFullscreen(true);
+            setWindowFullscreen(id, true);
         }
         bringToFront(id);
     };

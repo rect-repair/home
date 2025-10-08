@@ -9,6 +9,7 @@ import MaryWindow from '@/components/windows/MaryWindow';
 import AllTheBirdsWithOneStoneWindow from '@/components/windows/AllTheBirdsWithOneStoneWindow';
 import BarnacleGooseWindow from '@/components/windows/BarnacleGooseWindow';
 import FooterBar from '@/components/FooterBar';
+import DesktopTree from '@/components/DesktopTree';
 
 interface DesktopIcon {
   id: string;
@@ -115,7 +116,7 @@ function DesktopContent() {
         x: 50,
         y: 50,
         width: 1000,
-        height: 700,
+        height: 740,
         isVisible: true,
       },
       'mary': {
@@ -124,7 +125,7 @@ function DesktopContent() {
         x: 150,
         y: 50,
         width: 1000,
-        height: 700,
+        height: 750,
         isVisible: true,
       },
       'barnacle-goose': {
@@ -175,8 +176,8 @@ function DesktopContent() {
               onClick={() => {
                 if (icon.id === 'all-the-birds-with-one-stone') {
 
-                  const width = 400;
-                  const height = 300;
+                  const width = 100;
+                  const height = 180;
                   const left = Math.floor((window.screen.width - width) / 2);
                   const top = Math.floor(window.screen.height - height);
 
@@ -185,7 +186,7 @@ function DesktopContent() {
                     'birdWindow' + Date.now(),
                     `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
                   );
-                } else if (icon.id === 'stellata-waterway' || icon.id === 'barnacle-goose') {
+                } else if (icon.id === 'barnacle-goose' || icon.id === 'stellata-waterway' || icon.id === 'mary') {
                   handleOpenWindow(icon.id);
                 } else {
                   // Other games open externally in new tab
@@ -210,14 +211,17 @@ function DesktopContent() {
           initialWidth={window.width}
           initialHeight={window.height}
         >
-          {window.id === 'stellata-waterway' && <StellataWaterwayWindow />}
-          {window.id === 'mary' && <MaryWindow />}
-          {window.id === 'barnacle-goose' && <BarnacleGooseWindow />}
+          {window.id === 'stellata-waterway' && <StellataWaterwayWindow windowId={window.id} />}
+          {window.id === 'mary' && <MaryWindow windowId={window.id} />}
+          {window.id === 'barnacle-goose' && <BarnacleGooseWindow windowId={window.id} />}
         </Window>
       ))}
 
       {/* Footer Bar */}
       <FooterBar />
+
+      {/* Desktop Tree */}
+      <DesktopTree />
     </div>
   );
 }

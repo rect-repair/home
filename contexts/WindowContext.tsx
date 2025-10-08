@@ -10,6 +10,7 @@ interface WindowContextType {
     updateWindowPosition: (id: string, x: number, y: number) => void;
     updateWindowSize: (id: string, width: number, height: number) => void;
     bringToFront: (id: string) => void;
+    setWindowFullscreen: (id: string, isFullscreen: boolean) => void;
 }
 
 const WindowContext = createContext<WindowContextType | undefined>(undefined);
@@ -19,7 +20,8 @@ type WindowAction =
     | { type: 'CLOSE_WINDOW'; payload: string }
     | { type: 'UPDATE_POSITION'; payload: { id: string; x: number; y: number } }
     | { type: 'UPDATE_SIZE'; payload: { id: string; width: number; height: number } }
-    | { type: 'BRING_TO_FRONT'; payload: string };
+    | { type: 'BRING_TO_FRONT'; payload: string }
+    | { type: 'SET_FULLSCREEN'; payload: { id: string; isFullscreen: boolean } };
 
 function windowReducer(state: WindowState[], action: WindowAction): WindowState[] {
     switch (action.type) {
@@ -48,6 +50,13 @@ function windowReducer(state: WindowState[], action: WindowAction): WindowState[
             return state.map(window =>
                 window.id === action.payload
                     ? { ...window, zIndex: maxZIndex + 1 }
+                    : window
+            );
+
+        case 'SET_FULLSCREEN':
+            return state.map(window =>
+                window.id === action.payload.id
+                    ? { ...window, isFullscreen: action.payload.isFullscreen }
                     : window
             );
 
@@ -83,6 +92,10 @@ export function WindowProvider({ children }: { children: ReactNode }) {
         dispatch({ type: 'BRING_TO_FRONT', payload: id });
     };
 
+    const setWindowFullscreen = (id: string, isFullscreen: boolean) => {
+        dispatch({ type: 'SET_FULLSCREEN', payload: { id, isFullscreen } });
+    };
+
     return (
         <WindowContext.Provider
             value={{
@@ -92,6 +105,7 @@ export function WindowProvider({ children }: { children: ReactNode }) {
                 updateWindowPosition,
                 updateWindowSize,
                 bringToFront,
+                setWindowFullscreen,
             }}
         >
             {children}
