@@ -4,14 +4,17 @@ import React from 'react';
 
 // Easy-to-update leaderboard data
 const leaderboardData = [
-    { rank: 1, playerName: '小八兔击队', completedTime: '03:39:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
-    { rank: 2, playerName: '浴莉', completedTime: '03:44:00', stagesCompleted: 17, dateCompleted: '2024-10-03' },
-    { rank: 3, playerName: '毛茸茸小队', completedTime: '03:53:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
-    { rank: 4, playerName: '794小队', completedTime: '04:01:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
-    { rank: 5, playerName: '一只小猫', completedTime: '04:16:00', stagesCompleted: 17, dateCompleted: '2024-10-03' },
-    { rank: 6, playerName: 'bespa', completedTime: 'N/A', stagesCompleted: 17, dateCompleted: '2024-10-03' },
-    { rank: 7, playerName: '放屁小队', completedTime: 'N/A', stagesCompleted: 11, dateCompleted: '2024-10-02' },
-    { rank: 8, playerName: '口口口小队', completedTime: 'N/A', stagesCompleted: 9, dateCompleted: '2024-10-06' },
+  { rank: 1, playerName: 'Aurora二次方', completedTime: '03:02:00', stagesCompleted: 17, dateCompleted: '2024-10-07' },
+  { rank: 2, playerName: '小八兔击队', completedTime: '03:39:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
+  { rank: 3, playerName: '浴莉', completedTime: '03:44:00', stagesCompleted: 17, dateCompleted: '2024-10-03' },
+  { rank: 4, playerName: '毛茸茸小队', completedTime: '03:53:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
+  { rank: 5, playerName: '794小队', completedTime: '04:01:00', stagesCompleted: 17, dateCompleted: '2024-10-05' },
+  { rank: 6, playerName: '一只小猫', completedTime: '04:16:00', stagesCompleted: 17, dateCompleted: '2024-10-03' },
+  { rank: 7, playerName: '临时的king', completedTime: '04:20:00', stagesCompleted: 17, dateCompleted: '2024-10-07' },
+  { rank: 8, playerName: 'bespa', completedTime: 'N/A', stagesCompleted: 17, dateCompleted: '2024-10-03' },
+  { rank: 9, playerName: '放屁小队', completedTime: 'N/A', stagesCompleted: 11, dateCompleted: '2024-10-02' },
+  { rank: 10, playerName: '口口口小队', completedTime: 'N/A', stagesCompleted: 9, dateCompleted: '2024-10-06' },
+
 
 ];
 

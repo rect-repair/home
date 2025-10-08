@@ -51,6 +51,12 @@ const games = [
     url: 'https://gaemz.carrd.co/',
     icon: '/images/icons/gaemz.png',
   },
+  {
+    id: 9,
+    title: 'zishu',
+    url: 'https://zishuning.itch.io/',
+    icon: '/images/icons/zishu.png',
+  },
 
 ];
 
