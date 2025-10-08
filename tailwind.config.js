@@ -15,7 +15,7 @@ module.exports = {
         'arngren-blue': '#0000ff',
         'arngren-red': '#ff0000',
         'arngren-yellow': '#ffff00',
-        'arngren-green': '#00ff00',
+        'arngren-green': '#007950',
         'arngren-orange': '#ff8000',
         'arngren-purple': '#8000ff',
         'arngren-gray': '#c0c0c0',
@@ -25,6 +25,9 @@ module.exports = {
         'arngren-link': '#0000ff',
         'arngren-border': '#000000',
         'custom-red': '#A60000',
+        'custom-green': '#007950',
+        'custom-border': '#4CB172',
+        'custom-body': '#ADDABE',
       },
       animation: {
         'scan-line': 'scan-line 2s linear infinite',

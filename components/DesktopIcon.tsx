@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { DesktopIconProps } from '@/types/window';
 import CustomDraggable from './CustomDraggable';
+import { DesktopIconProps } from '@/types/window';
 
 export default function DesktopIcon({
   id,
@@ -18,6 +18,10 @@ export default function DesktopIcon({
   const hasMovedRef = useRef(false);
 
   useEffect(() => {
+    setPosition({ x, y });
+  }, [x, y]); // fixing position error
+
+  useEffect(() => {
     console.log('desktop icon re-rendered');
   }, []);
 
@@ -26,7 +30,7 @@ export default function DesktopIcon({
     // Check if we've moved more than 5 pixels
     const distance = Math.sqrt(
       Math.pow(data.x - dragStartRef.current.x, 2) +
-        Math.pow(data.y - dragStartRef.current.y, 2)
+      Math.pow(data.y - dragStartRef.current.y, 2)
     );
     if (distance > 5) {
       hasMovedRef.current = true;
@@ -56,7 +60,7 @@ export default function DesktopIcon({
 
   const iconComponent = (
     <div className='desktop-icon' onClick={handleClick}>
-      <div className='retro-icon w-24 h-24 flex-col'>{icon}</div>
+      <div className='retro-icon flex-col'>{icon}</div>
       <div className='desktop-icon-label'>{label}</div>
     </div>
   );

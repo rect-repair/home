@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '[[rect*]]repair home',
-  description: 'home computer',
+  title: 'CEDAR-OS',
+  description: 'A game launcher for the [[rect*]]repair <> boshi game exchange event',
 }
 
 export default function RootLayout({

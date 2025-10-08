@@ -1,15 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { WindowProvider, useWindow } from '@/contexts/WindowContext';
 import Window from '@/components/Window';
 import DesktopIcon from '@/components/DesktopIcon';
-import EventsWindow from '@/components/windows/EventsWindow';
-import ArchiveWindow from '@/components/windows/ArchiveWindow';
-import GamesWindow from '@/components/windows/GamesWindow';
-import ShopWindow from '@/components/windows/ShopWindow';
-import ContactWindow from '@/components/windows/ContactWindow';
-import KyotoWindow from '@/components/windows/KyotoWindow';
+import StellataWaterwayWindow from '@/components/windows/StellataWaterwayWindow';
+import MaryWindow from '@/components/windows/MaryWindow';
+import AllTheBirdsWithOneStoneWindow from '@/components/windows/AllTheBirdsWithOneStoneWindow';
+import BarnacleGooseWindow from '@/components/windows/BarnacleGooseWindow';
+import FooterBar from '@/components/FooterBar';
 
 interface DesktopIcon {
   id: string;
@@ -21,75 +20,82 @@ interface DesktopIcon {
   y?: number;
 }
 
-const ICON_SPACING = 120;
+const ICON_SPACING = 180;
 
 const desktopIcons: DesktopIcon[] = [
   {
-    id: 'events',
-    label: 'Events',
-    iconSrc: '/images/icons/events.png',
-    iconAlt: 'Events',
-    openPath: 'events',
+    id: 'stellata-waterway',
+    label: 'Stellata Waterway',
+    iconSrc: '/images/icons/stellata-waterway.png',
+    iconAlt: 'Stellata Waterway',
+    openPath: 'https://mattmora.itch.io/stellata-waterway',
     x: 0,
     y: 0,
   },
   {
-    id: 'archive',
-    label: 'Meetup Archive',
-    iconSrc: '/images/icons/archive.png',
-    iconAlt: 'Archive',
-    openPath: 'archive',
+    id: 'mary',
+    label: 'mary',
+    iconSrc: '/images/icons/mary.gif',
+    iconAlt: 'mary',
+    openPath: 'https://knarniapop.itch.io/mary',
     x: ICON_SPACING,
     y: 0,
   },
   {
-    id: 'games',
-    label: 'Cool things from friends',
-    iconSrc: '/images/icons/games.png',
-    iconAlt: 'Games',
-    openPath: 'games',
+    id: 'all-the-birds-with-one-stone',
+    label: 'All The Birds With One Stone',
+    iconSrc: '/images/icons/birds-with-one-stone.png',
+    iconAlt: 'All The Birds With One Stone',
+    openPath: 'https://html-classic.itch.zone/html/10378363/all-the-birds-with-one-stone/bird.html?=0',
     x: ICON_SPACING * 2,
     y: 0,
   },
   {
-    id: 'shop',
-    label: 'Shop',
-    iconSrc: '/images/icons/shop.png',
-    iconAlt: 'Shop',
-    openPath: 'shop',
+    id: 'reversed-queen',
+    label: 'Reversed Queen of Wands',
+    iconSrc: '/images/icons/queen-of-wands.png',
+    iconAlt: 'Reversed Queen of Wands',
+    openPath: 'https://tuniks.itch.io/reversed-queen-of-wands',
     x: ICON_SPACING * 3,
     y: 0,
   },
   {
-    id: 'contact',
-    label: 'Contact',
-    iconSrc: '/images/icons/contact.png',
-    iconAlt: 'Contact',
-    openPath: 'contact',
+    id: 'auto-battle-knights',
+    label: 'Auto Battle Knights',
+    iconSrc: '/images/icons/auto-battle-knights.png',
+    iconAlt: 'Auto Battle Knights',
+    openPath: 'https://irene-li.itch.io/auto-battle-knights',
     x: ICON_SPACING * 4,
     y: 0,
   },
   {
-    id: 'kyoto',
-    label: 'Kyoto',
-    iconSrc: '/images/icons/kyoto.png',
-    iconAlt: 'Kyoto',
-    openPath: 'kyoto',
+    id: 'barnacle-goose',
+    label: 'Barnacle Goose Experiment',
+    iconSrc: '/images/icons/barnacle-goose.png',
+    iconAlt: 'Barnacle Goose Experiment',
+    openPath: 'https://everest-pipkin.com/barnacle-goose/',
     x: ICON_SPACING * 5,
     y: 0,
   },
   {
-    id: 'instagram',
-    label: 'Instagram',
-    iconSrc: '/images/icons/instagram.png',
-    iconAlt: 'Instagram',
-    openPath: 'https://www.instagram.com/rect_repair/',
+    id: 'god-in-head',
+    label: 'A God who Lives in Your Head',
+    iconSrc: '/images/icons/god-in-head.png',
+    iconAlt: 'A God who Lives in Your Head',
+    openPath: 'https://005lumens.itch.io/a-god-who-lives-in-your-head',
     x: ICON_SPACING * 6,
     y: 0,
   },
+  {
+    id: 'cement',
+    label: 'cement',
+    iconSrc: '/images/icons/cement.png',
+    iconAlt: 'cement',
+    openPath: 'https://hatimb00.itch.io/cement',
+    x: ICON_SPACING * 7,
+    y: 0,
+  },
 
-  
-  
 ];
 
 function DesktopContent() {
@@ -102,73 +108,58 @@ function DesktopContent() {
     }
 
     const windowConfigs = {
-      events: {
-        id: 'events',
-        title: 'Events Calendar',
-        x: 100,
-        y: 100,
-        width: 800,
-        height: 600,
+      'stellata-waterway': {
+        id: 'stellata-waterway',
+        title: 'Stellata Waterway',
+        x: 50,
+        y: 50,
+        width: 1000,
+        height: 700,
         isVisible: true,
       },
-      archive: {
-        id: 'archive',
-        title: 'Archive',
-        x: 200,
-        y: 150,
-        width: 800,
-        height: 600,
-        isVisible: true,
-      },
-      games: {
-        id: 'games',
-        title: 'Cool things from friends',
+      'mary': {
+        id: 'mary',
+        title: 'mary',
         x: 150,
-        y: 250,
-        width: 600,
-        height: 500,
+        y: 50,
+        width: 1000,
+        height: 700,
         isVisible: true,
       },
-      shop: {
-        id: 'shop',
-        title: 'Consumerism',
-        x: 400,
-        y: 100,
-        width: 500,
-        height: 400,
+      'barnacle-goose': {
+        id: 'barnacle-goose',
+        title: 'Barnacle Goose Experiment',
+        x: 250,
+        y: 50,
+        width: 1000,
+        height: 700,
         isVisible: true,
       },
-      contact: {
-        id: 'contact',
-        title: 'Contact',
-        x: 200,
-        y: 150,
-        width: 500,
-        height: 400,
-        isVisible: true,
-      },
-      kyoto: {
-        id: 'kyoto',
-        title: '《京都存在维修计划》/Reality Restoration Project: Kyoto',
-        x: 300,
-        y: 200,
-        width: 800,
-        height: 600,
+      'all-the-birds-with-one-stone': {
+        id: 'all-the-birds-with-one-stone',
+        title: 'All The Birds With One Stone',
+        x: 0,
+        y: 0,
+        width: 1000,
+        height: 700,
         isVisible: true,
       },
     };
 
-    openWindow(windowConfigs[windowType as keyof typeof windowConfigs]);
+    const config = windowConfigs[windowType as keyof typeof windowConfigs];
+    if (config) {
+      openWindow(config);
+    }
   };
 
   return (
     <div className='h-screen w-screen relative overflow-hidden'>
       {/* Background */}
-      <div className='absolute inset-0 bg-white'></div>
+      <div className='absolute inset-0 bg-[#2B85BD]'></div>
 
       {/* Desktop Icons */}
-      <div className='absolute inset-0 p-4'>
-        <div className='flex flex-wrap gap-2 justify-start items-start h-full overflow-auto p-2'>
+      <div className='absolute inset-0 m-8 pb-16 pointer-events-none'>
+        <div className='flex flex-wrap gap-4 justify-start items-start h-full pointer-events-auto'>
           {desktopIcons.map((icon) => (
             <DesktopIcon
               key={icon.id}
@@ -178,14 +169,26 @@ function DesktopContent() {
                 <img
                   src={icon.iconSrc}
                   alt={icon.iconAlt}
-                  className='w-24 h-24'
                 />
               }
               onClick={() => {
-                if (icon.openPath.startsWith('http')) {
-                  window.open(icon.openPath, '_blank');
+                if (icon.id === 'all-the-birds-with-one-stone') {
+
+                  const width = 400;
+                  const height = 300;
+                  const left = Math.floor((window.screen.width - width) / 2);
+                  const top = Math.floor(window.screen.height - height);
+
+                  window.open(
+                    icon.openPath,
+                    'birdWindow' + Date.now(),
+                    `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`
+                  );
+                } else if (icon.id === 'stellata-waterway' || icon.id === 'barnacle-goose') {
+                  handleOpenWindow(icon.id);
                 } else {
-                  handleOpenWindow(icon.openPath);
+                  // Other games open externally in new tab
+                  window.open(icon.openPath, '_blank');
                 }
               }}
               x={icon.x}
@@ -206,19 +209,14 @@ function DesktopContent() {
           initialWidth={window.width}
           initialHeight={window.height}
         >
-          {window.id === 'events' && <EventsWindow />}
-          {window.id === 'archive' && <ArchiveWindow />}
-          {window.id === 'games' && <GamesWindow />}
-          {window.id === 'shop' && <ShopWindow />}
-          {window.id === 'contact' && <ContactWindow />}
-          {window.id === 'kyoto' && <KyotoWindow />}
+          {window.id === 'stellata-waterway' && <StellataWaterwayWindow />}
+          {window.id === 'mary' && <MaryWindow />}
+          {window.id === 'barnacle-goose' && <BarnacleGooseWindow />}
         </Window>
       ))}
 
-      {/* Floating Footer */}
-      <div className='fixed bottom-2 left-2 text-xs text-gray-600 z-10 pointer-events-none'>
-        ©2025 [[rect*]]repair
-      </div>
+      {/* Footer Bar */}
+      <FooterBar />
     </div>
   );
 }

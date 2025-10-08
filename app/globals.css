@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Pixel Font */
+@font-face {
+  font-family: 'FusionPixel';
+  src: url('/fusion-pixel-10px-monospaced-zh_hans copy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
 * {
@@ -12,30 +20,33 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  font-family: 'Orbitron', 'MS Sans Serif', 'Chicago', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'FusionPixel', 'Orbitron', 'MS Sans Serif', 'Chicago', sans-serif;
+  font-weight: normal;
 }
 
 body {
-  color: #000000;
-  background: #ffffff;
-  overflow: hidden;
-  font-family: 'Times New Roman', serif;
+  color: #ffffff;
+  /* background: #4a8a4a; */
+  background: #2B85BD;
+  font-family: 'FusionPixel', 'Times New Roman', serif;
 }
 
 .retro-window {
   /* background: #ffffff; */
-  /* border: 1px solid #000000; */
-  font-family: 'Times New Roman', serif;
+  border: 4px solid #4CB172;
+  font-family: 'FusionPixel', 'Times New Roman', serif;
 }
 
 .retro-window-titlebar {
-  background: #909090;
+  background: #007950;
+  border-bottom: 4px solid #4CB172;
   color: #ffffff;
-  padding: 1px 6px;
-  font-size: 14px;
-  font-weight: bold;
+  padding: 4px 8px 4px 16px;
+  font-size: 24px;
+  /* font-weight: bold; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,27 +56,28 @@ body {
 }
 
 .retro-window-content {
-  background: #d4d4d4;
-  padding: 12px;
-  height: calc(100% - 40px);
-  overflow: auto;
+  background: #007950;
+  /* padding: 16px; */
+  height: calc(100% - 47px);
+  overflow-x: hidden;
+  overflow-y: auto;
   color: #000000;
+  font-size: 16px;
 }
 
 .retro-button {
-  padding: 1px;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 16px;
+  /* font-weight: bold; */
   cursor: pointer;
   user-select: none;
-  font-family: 'Times New Roman', serif;
+  font-family: 'FusionPixel', 'Times New Roman', serif;
   color: #000000;
 }
 
 .retro-icon {
-  width: 96px;
-  height: 96px;
-  background: #ffffff;
+  width: 150px;
+  height: 120px;
+  /* background: #7ab87a; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,58 +87,72 @@ body {
   text-align: center;
   word-wrap: break-word;
   line-height: 1.1;
-  color: #000000;
+  margin-bottom: 8px;
+  padding: 5px;
+  border-radius: 8px;
+  border-width: 4px;
+  border-color: #01446e00;
 }
 
 .retro-icon:hover {
-  background: #bcbcbc;
-  color: #000000;
+  /* background: #8bc88b; */
+  filter: drop-shadow(0 0 20px #7ab87a);
+  border-radius: 8px;
 }
 
 .retro-icon:active {
-  background: #0015ff;
-  color: #ffffff;
+  /* background: #2d5a2d; */
+  border-style: dashed;
+  border-color: #2d5a2d;
+  /* color: #ffffff; */
 }
 
 /* Desktop Icons */
 .desktop-icon {
   display: flex;
+  /* background: #01446e; */
   flex-direction: column;
   align-items: center;
-  width: 96px;
-  margin: 8px;
+  width: 170px;
+  /* height: 185px; */
   cursor: pointer;
+  padding: 0px;
   user-select: none;
   flex-shrink: 0;
+  border-radius: 16px;
+  /* <-- */
 }
 
 .desktop-icon-label {
-  color: #000000;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 26px;
   text-align: center;
-  margin-top: 4px;
-  font-weight: bold;
+  margin-top: 0px;
+  /* font-weight: bold; */
   word-wrap: break-word;
-  line-height: 1.1;
+  line-height: 1.3;
+  max-width: 150px;
+  padding: 0px;
 }
 
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 16px;
+.retro-window-content::-webkit-scrollbar {
+  width: 20px;
 }
 
-::-webkit-scrollbar-track {
-  background: #c0c0c0;
-  border: 1px solid #808080;
+.retro-window-content::-webkit-scrollbar-track {
+  background: #00795100;
+  border-left: 4px solid #4CB172;
+  /* border: 2px solid #007950; */
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #c0c0c0 0%, #a0a0a0 100%);
-  border: 1px outset #c0c0c0;
+.retro-window-content::-webkit-scrollbar-thumb {
+  background: #ADDABE;
+  border-left: 4px solid #4CB172;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #d0d0d0 0%, #b0b0b0 100%);
+.retro-window-content::-webkit-scrollbar-thumb:hover {
+  background: #bee9ce;
+  /* border-left: 4px solid #4CB172; */
 }
 
 /* Mobile Responsive */
@@ -134,7 +160,7 @@ body {
   .retro-icon {
     width: 96px;
     height: 96px;
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .desktop-icon {
@@ -144,7 +170,7 @@ body {
   }
 
   .desktop-icon-label {
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .retro-window {
@@ -157,12 +183,12 @@ body {
   }
 
   .retro-window-titlebar {
-    padding: 8px 12px;
-    font-size: 14px;
+    /* padding: 8px; */
+    font-size: 18px;
   }
 
   .retro-button {
-    padding: 6px;
-    font-size: 12px;
+    padding: 8px;
+    font-size: 16px;
   }
 }
